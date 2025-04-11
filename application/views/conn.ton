@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Mini App Integration</title>
+
+  <!-- Подключаем SDK для работы с кошельками TON -->
+  <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+</head>
+<body>
+
+  <h1>TonConnect Integration Example</h1>
+
+  <!-- Кнопка для подключения кошелька -->
+  <button id="connect-wallet-button">Connect Wallet</button>
+
+  <!-- Кнопка для отключения кошелька -->
+  <button id="disconnect-wallet-button" style="display: none;">Disconnect Wallet</button>
+
+  <!-- Статус подключения -->
+  <p id="status">Status: Not connected</p>
+
+  <script>
+    window.onload = async () => {
+      try {
+        // Инициализация TonConnect SDK
+        const connector = new TonConnectSDK.TonConnect({
+          manifestUrl: 'https://4653-65-21-85-18.ngrok-free.app/tonconnect-manifest.php', // Убедитесь, что манифест доступен
+        });
+
+        // Создание кнопок подключения и отключения
+        const connectButton = document.getElementById('connect-wallet-button');
+        const disconnectButton = document.getElementById('disconnect-wallet-button');
+        const statusText = document.getElementById('status');
+
+        // Проверка доступности кошельков
+        const walletsList = await connector.getWallets();
+        console.log(walletsList);
+
+        // Восстановление соединения, если оно существует
+        connector.restoreConnection();
+        console.log(connector);
+
+        // Функция для преобразования адреса в user-friendly формат с использованием метода SDK
+        const convertToUserFriendlyAddress = (address) => {
+          try {
+            // Используем встроенный метод SDK для преобразования
+            return connector.convertToUserFriendly(address);  // Используем метод convertToUserFriendly
+          } catch (error) {
+            console.error('Error converting address:', error);
+            return address; // Если произошла ошибка, возвращаем оригинальный адрес
+          }
+        };
+
+        // Функция для обновления видимости кнопок и отображения корректного адреса
+        const updateButtonVisibility = async () => {
+          if (connector.connected) {
+            // Если кошелек подключен, скрыть кнопку подключения и показать кнопку отключения
+            connectButton.style.display = 'none';
+            disconnectButton.style.display = 'inline-block';
+
+            // Получаем правильный user-friendly адрес
+            let address = connector.account.address;
+
+            // Преобразуем адрес с использованием метода SDK
+            const userFriendlyAddress = convertToUserFriendlyAddress(address);
+            statusText.innerText = `Status: Connected to wallet at address ${userFriendlyAddress}`;
+          } else {
+            // Если кошелек не подключен, показать кнопку подключения и скрыть кнопку отключения
+            connectButton.style.display = 'inline-block';
+            disconnectButton.style.display = 'none';
+            statusText.innerText = 'Status: Not connected';
+          }
+        };
+
+        // Вызываем функцию для первоначальной установки видимости кнопок
+        updateButtonVisibility();
+
+        // Обработчик для подключения кошелька
+        connectButton.addEventListener('click', async () => {
+          try {
+            // Попытка подключения
+            const walletConnectionSource = {
+              universalLink: 'https://app.tonkeeper.com/ton-connect',
+              bridgeUrl: 'https://bridge.tonapi.io/bridge',
+            };
+            const universalLink = await connector.connect(walletConnectionSource);
+            console.log('Wallet connection URL:', universalLink);
+
+            // Переход по ссылке для подключения кошелька
+            window.location.href = universalLink; // Перенаправляем пользователя для завершения подключения
+          } catch (error) {
+            console.error('Error during connection:', error);
+            statusText.innerText = 'Status: Failed to connect';
+          }
+        });
+
+        // Обработчик для отключения кошелька
+        disconnectButton.addEventListener('click', async () => {
+          try {
+            // Отключаем кошелек
+            await connector.disconnect();
+            console.log('Wallet disconnected');
+
+            // Обновление состояния кнопок
+            updateButtonVisibility();
+          } catch (error) {
+            console.error('Error during disconnect:', error);
+            statusText.innerText = 'Status: Failed to disconnect';
+          }
+        });
+
+        // Обработчик изменений статуса подключения
+        connector.onStatusChange(walletInfo => {
+          console.log('Wallet status changed:', walletInfo);
+          updateButtonVisibility();
+        });
+
+      } catch (error) {
+        console.error('Error during TonConnect initialization:', error);
+        document.getElementById('status').innerText = 'Status: Initialization failed';
+      }
+    };
+  </script>
+
+</body>
+</html>
+
