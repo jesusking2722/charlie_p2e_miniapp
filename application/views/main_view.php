@@ -463,25 +463,26 @@ $('.send-transaction').on('click', async function () {
         <div class="news-main">
             <div class="news-title">
                 <h2>News</h2>
-                <a href="https://x.com/Charlie_Unicoin" target="_blank">All news</a>
+                <a href="https://x.com/chrleunicornai?s=21" target="_blank">All news</a>
             </div>
             <div class="news-items">
-                
+
                     <div class="news-item" style="">
                         <div class="news-picture">
-                            <a href="https://x.com/Charlie_Unicoin/status/1862737033564684489?t=4VQGR9CKVqvgAcoqqcLf-Q&s=19" target="_blank" style="text-decoration: none;"><img src="/assets/blog1.png" alt=""></a>
+                            <a href="https://x.com/chrleunicornai?s=21" target="_blank" style="text-decoration: none;"><img src="/assets/news1.jpg" alt=""></a>
                         </div>
                         <div class="news-description">
-                            <a href="https://x.com/Charlie_Unicoin/status/1862737033564684489?t=4VQGR9CKVqvgAcoqqcLf-Q&s=19" target="_blank" style="text-decoration: none;"><p>Charlie The Unicoin: The Revolution Starts Now! PRESALE IS LIVE!</p></a>
+                            <a href="https://x.com/chrleunicornai?s=21" target="_blank" style="text-decoration: none;"><p>Charlie Unicorn AI news</p></a>
                         </div>
                     </div>
-                
+
+
                     <div class="news-item" style="">
                         <div class="news-picture">
-                            <a href="https://t.me/CharlieTheUnicoinAnnouncements" target="_blank" style="text-decoration: none;"><img src="/assets/22.jpg" alt=""></a>
+                            <a href="https://x.com/chrleunicornai?s=21" target="_blank" style="text-decoration: none;"><img src="/assets/news2.jpg" alt=""></a>
                         </div>
                         <div class="news-description">
-                            <a href="https://t.me/CharlieTheUnicoinAnnouncements" target="_blank" style="text-decoration: none;"><p>Charlie the Unicoin: A Breakthrough Moment in History</p></a>
+                            <a href="https://x.com/chrleunicornai?s=21" target="_blank" style="text-decoration: none;"><p>Charlie Unicorn AI news</p></a>
                         </div>
                     </div>
                 

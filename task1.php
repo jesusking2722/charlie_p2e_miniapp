@@ -8,7 +8,7 @@
         $select = $mysqli->update("users" , "task1=".time(),"id='".$_SESSION['user']."'") or die('Error DB');
         $select = $mysqli->update("users" , "balance_points=balance_points+1","id='".$_SESSION['user']."'") or die('Error DB');
         $select = $mysqli->update("users" , "balance_chrle=balance_chrle+1000","id='".$_SESSION['user']."'") or die('Error DB');
-        header("location: https://t.me/CharlieTheUnicoinOfficial");
+        header("location: https://t.me/CharlieUnicornaiOfficial");
   }else{ 
       header("location: /");
   }

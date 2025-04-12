@@ -210,11 +210,10 @@
 <script>
     // insert your block id
     if (window.Telegram && Telegram.WebApp) {
-  const AdController = window.Adsgram.init({ blockId: "6142" });
+  const AdController = window.Adsgram.init({ blockId: "int-9834" });
 
-  const button2 = document.getElementById('ads2');
-  button2.addEventListener('click', () => {
-    alert("dfdf");
+  const button1 = document.getElementById('ads');
+  button.addEventListener('click', () => {
 
     AdController.show()
       .then(() => {
@@ -243,8 +242,7 @@
             url: '/task2.php',
             data: {},
             success: function (result) {
-                Telegram.WebApp.openLink("https://t.me/CharlieTheUnicoinAnnouncements/")
-                // window.open("https://t.me/CharlieTheUnicoinAnnouncements/", "_blank");
+                Telegram.WebApp.openLink("https://t.me/CharlieUnicornAIAnnouncements")
             }
         });
     }
@@ -254,8 +252,7 @@
             url: '/task3.php',
             data: {},
             success: function (result) {
-                Telegram.WebApp.openLink("https://x.com/Charlie_Unicoin/status/1862737033564684489?t=4VQGR9CKVqvgAcoqqcLf-Q&s=19")
-                // window.open("http://charlieunicornaimarketplace.eu/", "_blank");
+                Telegram.WebApp.openLink("https://x.com/chrleunicornai?s=21")
             }
         });
     }
@@ -265,7 +262,6 @@
             url: '/task4.php',
             data: {},
             success: function (result) {
-                // window.open("http://charlieunicornaimarketplace.eu/", "_blank");
                 Telegram.WebApp.openLink("https://youtube.com/@charlieunicoin?si=AhNl7Y2GS_kei8it")
             }
         });
@@ -277,7 +273,6 @@
             data: {},
             success: function (result) {
                 Telegram.WebApp.openLink("https://charlieunicornai-sale.eu/")
-                // window.open("http://charlieunicornaimarketplace.eu/", "_blank");
             }
         });
     }
@@ -288,7 +283,6 @@
             data: {},
             success: function (result) {
                 Telegram.WebApp.openLink("http://charlieunicornaimarketplace.eu/")
-                // window.open("https://pro.opensea.io/collection/charlie-unicoin/activity?showMintModal=true/", "_blank");
             }
         });
     }

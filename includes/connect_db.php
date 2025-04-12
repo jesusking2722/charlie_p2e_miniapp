@@ -5,18 +5,19 @@ class connect_db{
         $user = 'root';
         $pass = '';
         $db = 'nm407797_charlie';
+        $connection = mysqli_connect($host,$user,$pass,$db); 
         // $host = getenv('RAILWAY_DATABASE_HOST');
         // $user = getenv('RAILWAY_DATABASE_USERNAME');
         // $pass = getenv('RAILWAY_DATABASE_PASSWORD');
         // $db = getenv('RAILWAY_DATABASE_NAME');
         // $connection = mysqli_connect($host,$user,$pass,$db); 
 
-        $host = 'caboose.proxy.rlwy.net';
-        $user = 'root';
-        $pass = 'TxQHOxfDegAGmGUYolBrFVfGTFsWGzvh';
-        $db = 'nm407797_charlie';
-        $port = '58838';
-        $connection = mysqli_connect($host,$user,$pass,$db, $port); 
+        // $host = 'caboose.proxy.rlwy.net';
+        // $user = 'root';
+        // $pass = 'TxQHOxfDegAGmGUYolBrFVfGTFsWGzvh';
+        // $db = 'nm407797_charlie';
+        // $port = '58838';
+        // $connection = mysqli_connect($host,$user,$pass,$db, $port); 
         #print_r($connection);
         //exit();
         $connection->set_charset('utf8');

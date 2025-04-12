@@ -6,7 +6,7 @@
   $user_data = $select_user_data->fetch_object();       
   if($user_data->id>0){
         $select = $mysqli->update("users" , "balance_chrle=balance_chrle+5000","id='".$_SESSION['user']."'") or die('Error DB');
-      // header("location: /");
+      header("location: /");
   }else{ 
       header("location: /");
   }

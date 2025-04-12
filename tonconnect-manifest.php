@@ -11,3 +11,5 @@ $manifest = [
 
 echo json_encode($manifest); // Convert the array to JSON and output it
 ?>
+
+
