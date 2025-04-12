@@ -2,11 +2,11 @@
 header('Content-Type: application/json'); // Set the content type to JSON
 header('Access-Control-Allow-Origin: *');
 $manifest = [
-    "url"=> "https://4653-65-21-85-18.ngrok-free.app", 
+    "url"=> "https://website-93cb003f.akr.kwk.mybluehost.me", 
     "name"=> "Charlie Game",
-    "iconUrl"=> "https://4653-65-21-85-18.ngrok-free.app/icon.png", 
-    "termsOfUseUrl"=> "https://4653-65-21-85-18.ngrok-free.app/terms.php",
-    "privacyPolicyUrl"=> "https://4653-65-21-85-18.ngrok-free.app/privacy.php"
+    "iconUrl"=> "https://website-93cb003f.akr.kwk.mybluehost.me/icon.png", 
+    "termsOfUseUrl"=> "https://website-93cb003f.akr.kwk.mybluehost.me/terms.php",
+    "privacyPolicyUrl"=> "https://website-93cb003f.akr.kwk.mybluehost.me/privacy.php"
 ];
 
 echo json_encode($manifest); // Convert the array to JSON and output it

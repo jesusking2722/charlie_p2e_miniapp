@@ -1,8 +1,8 @@
 <?php
 session_start();
-if($_GET['s']=="1"){
-  $_SESSION['user']="82";
-}
+// if($_GET['s']=="1"){
+//   $_SESSION['user']="82";
+// }
   include "includes/init_db.php";
   $mysqli = new init_db;
       $rate_users=0;

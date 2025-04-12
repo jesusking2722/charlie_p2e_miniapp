@@ -1,15 +1,16 @@
 <?php
 class connect_db{
     public function connect(){
-        // $host = 'localhost';
-        // $user = 'root';
-        // $pass = '';
-        // $db = 'nm407797_charlie';
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'nm407797_charlie';
         // $host = getenv('RAILWAY_DATABASE_HOST');
         // $user = getenv('RAILWAY_DATABASE_USERNAME');
         // $pass = getenv('RAILWAY_DATABASE_PASSWORD');
         // $db = getenv('RAILWAY_DATABASE_NAME');
-        
+        // $connection = mysqli_connect($host,$user,$pass,$db); 
+
         $host = 'caboose.proxy.rlwy.net';
         $user = 'root';
         $pass = 'TxQHOxfDegAGmGUYolBrFVfGTFsWGzvh';

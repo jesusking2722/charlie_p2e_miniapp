@@ -41,7 +41,7 @@
                     </div>
                     <div class="mission-txt">
                         <span>Watch ADS and earn CHRLEP</span>
-                        <p>1000 $CHRLEP</p>
+                        <p>5000 $CHRLEP</p>
                     </div>
                         <a href="# "id="ads" class="gradient-whiteoutline"><span>DO</span></a>
                 </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="mission-txt">
                         <span>Watch ADS and earn CHRLEP 2</span>
-                        <p>1000 $CHRLEP</p>
+                        <p>5000 $CHRLEP</p>
                     </div>
                         <a href="# "id="ads2" class="gradient-whiteoutline"><span>DO</span></a>
                 </div>
@@ -209,15 +209,25 @@
 
 <script>
     // insert your block id
-    const AdController = window.Adsgram.init({ blockId: "6142" });
-    const button1 = document.getElementById('ads');
-    button1.addEventListener('click', () => {
-        AdController.show().then((result) => {
-            location.href='/task_ads.php';
-        }).catch((result) => {
-            console.log(JSON.stringify(result, null, 4));
-        })
-    })
+    if (window.Telegram && Telegram.WebApp) {
+  const AdController = window.Adsgram.init({ blockId: "6142" });
+
+  const button2 = document.getElementById('ads2');
+  button2.addEventListener('click', () => {
+    alert("dfdf");
+
+    AdController.show()
+      .then(() => {
+        location.href = '/task_ads.php';
+      })
+      .catch((error) => {
+        console.log("Ad failed:", error);
+        alert("Please open this app in Telegram to view ads.");
+      });
+  });
+} else {
+  alert("This app must be opened inside Telegram to function properly.");
+}
     const button2 = document.getElementById('ads2');
     button2.addEventListener('click', () => {
         AdController.show().then((result) => {

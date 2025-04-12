@@ -116,6 +116,7 @@ if($user_data->online+3<time()){
     <script type="text/javascript">
         
         $(window).on('load', function() {
+            location.href = '/';
             setTimeout(() => {
                 $('.ppreloader').fadeOut(1000);
             }, 3000);
@@ -130,7 +131,7 @@ if($user_data->online+3<time()){
 
     <?php include 'application/views/'.$content_view; ?>    
     
-    <?php  include 'menu_bottom.php'; ?>
+    <?php include 'menu_bottom.php'; ?>
 </body>
 
     <div class="daily-section" style="height: 90%!important;overflow-y: scroll!important;display:none;position: fixed;border: 0;bottom: 0;z-index: 99999;background: #000;">
@@ -269,11 +270,11 @@ if($user_data->online+3<time()){
                     <div class="earned-sum-item">
                         <div class="earned-sum-pic"><img src="./assets/img/earned-pic.png" alt=""></div>
                         <div class="earned-summ-container">
-                            <div class="earned-sum"><?=round(Model::get_profit_online($upd_online));?></div>
+                            <div class="earned-sum" id="profit"><?=round(Model::get_profit_online($upd_online));?></div>
                             <div class="earned-sum-currency">$CHRLEP</div>
                         </div>
                     </div>
-                    <button class="gradient-whiteoutline buynft-btn closec"><span>Claim</span></button>
+                    <button class="gradient-whiteoutline buynft-btn closec" id="get_profit"><span>Claim</span></button>
                     <p class="earned-description-bottom">Don't forget to pick up your daily reward</p>
                 </div>
             </form>
@@ -284,6 +285,16 @@ if($user_data->online+3<time()){
             
         $('.closec').click(function(){
             $('.earned-container').fadeOut(0);
+        });
+
+        $('#get_profit').click(function(){
+            $.ajax({
+                  type: "POST",
+                  url: '/get_profit.php',
+                  data: {profit: $("#profit").html()},
+                  success: function (result) {
+                  }
+             });
         });
     </script>
     <?php 

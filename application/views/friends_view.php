@@ -7,10 +7,12 @@
                 <h1>Friends</h1>
             </div>
             
-            <a class="" style="margin: -30px 0 0 50px;padding: 0px" href="/global">
+            <a class="" style="text-decoration:none!important;margin: -30px 0 0 50px;padding: 0px;"  href="/global" style="text-underline-offset: 0;">
                  <div class="icon">
                     <img src="/assets/img/ranking1.svg" width="55" height="55" alt="">
                 </div>
+                <p style="color:white;font-size:10px;padding:0px;margin:0px 0px 0px -7px">Global Ranking</p>
+
             </a>
         </div>
         <div class="friends-top-items">
