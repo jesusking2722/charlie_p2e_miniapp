@@ -340,12 +340,12 @@
 $('.send-transaction').on('click', async function () {
     var amountx=$(this).attr('amount');
     var wallet=$(this).attr('wallet');
-    console.log(amountx);
+    console.log("amountx: ", amountx, "wallet: ", wallet);
     const transaction1 = {
             validUntil: Math.floor(Date.now() / 1000) + 300,
             messages: [
               {
-                address: 'UQA3IseTDUitsdh88ysCxuUw8by7D5WQ4-n3TbKVc9-PpOoi', 
+                address: 'UQDrY6os74OCIuyGYX8HFw5VWxT2ovWURWiZ6V1_4QBH79hu', 
                 amount: (parseInt(amountx) * 1e9).toString()
               }
             ]
