@@ -43,13 +43,13 @@
     $.ajax({
         type: "POST",
         url: '/get_login.php',
-        data: {"user_id": user_id, "name": user_name, "surname": user_surname, "nickname": user_username, "photo_url": photo_url, "user_username":""},
+        data: {"user_id": user_id, "name": user_name, "surname": user_surname, "nickname": user_username, "photo_url": photo_url, "user_username": user_username},
         success: function (result) {
             if(result=="1"){
                 if(window.Telegram.WebApp.initDataUnsafe.user.language_code=='ru'){
-                    // location.href="/lang/set/?lang=rus";
+                    location.href="/lang/set/?lang=rus";
                 }else{
-                    // location.href="/lang/set/?lang=eng";        
+                    location.href="/lang/set/?lang=eng";        
                 }
             }else{
                 //award_check();
@@ -242,13 +242,13 @@ if($user_data->online+3<time()){
                   }
              });
 
-        }
+        }();
         
-        $(document).ready(function(){
-            setTimeout(() => {
-                const intervalID = setInterval( balance_check, 5000);
-            },3000)
-        });
+        // $(document).ready(function(){
+        //     setTimeout(() => {
+        //         const intervalID = setInterval( balance_check, 5000);
+        //     },3000)
+        // });
     </script>
 
 

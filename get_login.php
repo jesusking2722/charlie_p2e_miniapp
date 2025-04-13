@@ -2,20 +2,6 @@
 session_start();
   include "includes/init_db.php";
   $mysqli = new init_db;
-
-  // $imgs = ['1721', '1929', '2422', '3009', '3552', '3711', '3825', '4252', '5011', '5384', '5900', '6130',
-  //  '6355', '6770', '7124', '7954', '8315', '9699'];
-  // foreach ($imgs as $key => $value) {
-  //   $data_ins['name']="Legendary #".(39 + $key);
-  //   $data_ins['price']=200;
-  //   $data_ins['price_chrlep']=360000;
-  //   $data_ins['img']='/assets/LEGENDARY/'.$value.'.png';
-  //   $data_ins['level']='Legendary';
-  //   $data_ins['farming']= 650;
-  //   $ins = $mysqli->_insert_db_data("nft" , $data_ins) or die('Error DB');
-      
-  // }
-
 if(isset($_SESSION['user'])){
     $select_user_data = $mysqli->select("users" , "login='".$_POST['user_id']."'"," ORDER by id DESC") or die('Error DB');
     $result_mysqli = $select_user_data->fetch_object();
