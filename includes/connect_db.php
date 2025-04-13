@@ -1,27 +1,18 @@
 <?php
-class connect_db{
-    public function connect(){
+class connect_db {
+    public function connect() {
         $host = 'localhost';
         $user = 'root';
         $pass = '';
-        $db = 'nm407797_charlie';
-        $connection = mysqli_connect($host,$user,$pass,$db); 
-        // $host = getenv('RAILWAY_DATABASE_HOST');
-        // $user = getenv('RAILWAY_DATABASE_USERNAME');
-        // $pass = getenv('RAILWAY_DATABASE_PASSWORD');
-        // $db = getenv('RAILWAY_DATABASE_NAME');
-        // $connection = mysqli_connect($host,$user,$pass,$db); 
-
-        // $host = 'caboose.proxy.rlwy.net';
-        // $user = 'root';
-        // $pass = 'TxQHOxfDegAGmGUYolBrFVfGTFsWGzvh';
-        // $db = 'nm407797_charlie';
-        // $port = '58838';
-        // $connection = mysqli_connect($host,$user,$pass,$db, $port); 
-        #print_r($connection);
-        //exit();
+        $db = 'akrkwkmy_nm407797_charlie';
+        $port = "3306";
+        $connection = new mysqli($host, $user, $pass, $db, $port);
+        
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+        }
+        
         $connection->set_charset('utf8');
-        #$connect->set_charset('utf8');
         return $connection;
-     }
+    }
 }

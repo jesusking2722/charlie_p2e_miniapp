@@ -133,7 +133,7 @@
       try {
         // Инициализация TonConnect SDK
         const connector = new TonConnectSDK.TonConnect({
-          manifestUrl: 'https://website-93cb003f.akr.kwk.mybluehost.me/tonconnect-manifest.json'
+          manifestUrl: 'https://ton-transaction-svelte.vercel.app/tonconnect-manifest.json'
         });
         // Элементы интерфейса
         const connectButton_all = document.getElementById('connect-wallet-buttonz');

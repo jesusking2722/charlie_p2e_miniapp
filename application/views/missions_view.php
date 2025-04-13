@@ -45,16 +45,16 @@
                     </div>
                         <a href="# "id="ads" class="gradient-whiteoutline"><span>DO</span></a>
                 </div>
-                <div class="mission-line">
-                    <div class="icon">
-                        <img src="/assets/img/yt.svg" alt="">
-                    </div>
-                    <div class="mission-txt">
-                        <span>Watch ADS and earn CHRLEP 2</span>
-                        <p>5000 $CHRLEP</p>
-                    </div>
-                        <a href="# "id="ads2" class="gradient-whiteoutline"><span>DO</span></a>
-                </div>
+                <!--<div class="mission-line">-->
+                <!--    <div class="icon">-->
+                <!--        <img src="/assets/img/yt.svg" alt="">-->
+                <!--    </div>-->
+                <!--    <div class="mission-txt">-->
+                <!--        <span>Watch ADS and earn CHRLEP 2</span>-->
+                <!--        <p>5000 $CHRLEP</p>-->
+                <!--    </div>-->
+                <!--        <a href="# "id="ads2" class="gradient-whiteoutline"><span>DO</span></a>-->
+                <!--</div>-->
 
 
                 <div class="mission-line">
@@ -211,9 +211,10 @@
     // insert your block id
     if (window.Telegram && Telegram.WebApp) {
   const AdController = window.Adsgram.init({ blockId: "int-9834" });
+    console.log("Ad controller: ", AdController);
 
   const button1 = document.getElementById('ads');
-  button.addEventListener('click', () => {
+  button1.addEventListener('click', () => {
 
     AdController.show()
       .then(() => {

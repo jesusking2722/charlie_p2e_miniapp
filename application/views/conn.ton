@@ -28,7 +28,7 @@
       try {
         // Инициализация TonConnect SDK
         const connector = new TonConnectSDK.TonConnect({
-          manifestUrl: 'https://4653-65-21-85-18.ngrok-free.app/tonconnect-manifest.php', // Убедитесь, что манифест доступен
+          manifestUrl: 'https://website-93cb003f.akr.kwk.mybluehost.me/tonconnect-manifest.php', // Убедитесь, что манифест доступен
         });
 
         // Создание кнопок подключения и отключения

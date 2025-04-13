@@ -2765,7 +2765,7 @@ body {
 }
 
 .ranks-item1 {
-    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px) !important;
     background: #2c2c2c;
     padding: 10px;
     align-items: center;
@@ -2777,35 +2777,35 @@ body {
     position: relative;
     padding: 3px;
     background: rgb(23, 166, 237);
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%) !important;
 }
 
 .header-bar .rank2 {
     position: relative;
     padding: 3px;
     background: silver;
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%) !important;
 }
 
 .header-bar .rank3 {
     position: relative;
     padding: 3px;
     background: gold;
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%) !important;
 }
 
 .header-bar .rank4 {
     position: relative;
     padding: 3px;
     background: rgb(70, 224, 70);
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%) !important;
 }
 
 .header-bar .rank5 {
     position: relative;
     padding: 3px;
     background: rgb(240, 66, 206);
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%) !important;
 }
 
 

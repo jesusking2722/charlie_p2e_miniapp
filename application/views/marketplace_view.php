@@ -1,6 +1,3 @@
-
-    <a id="scrollTopBtn" class="gradient-whiteoutline" title="Go to top"><span>⬆</span></a>
-    
 <div class="failfull" style="display:none;z-index: 99999999999999999999;">
     <div class="failfull-content">
         <span>Failed!</span>
