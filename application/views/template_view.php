@@ -120,7 +120,7 @@ if($user_data->online+3<time()){
         $(window).on('load', function() {
             setTimeout(() => {
                 $('.ppreloader').fadeOut(1000);
-                // location.href = '/';
+                location.href = '/';
             }, 3000);
         });
     </script>

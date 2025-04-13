@@ -45,7 +45,7 @@ class init_db extends connect_db {
         }
         $columns = implode(",", $columns);
         $values = implode(",", $values);
- echo "INSERT INTO ". $tname ." ($columns) VALUES ($values)";
+//  echo "INSERT INTO ". $tname ." ($columns) VALUES ($values)";
         return mysqli_query($this->conn, "INSERT INTO ". $tname ." ($columns) VALUES ($values)");
 
         mysqli_close($this->conn);
