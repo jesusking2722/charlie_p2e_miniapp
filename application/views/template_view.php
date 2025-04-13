@@ -230,7 +230,6 @@ if($user_data->online+3<time()){
               });
         }
         
-        //const intervalID2 = setInterval(balance_check, 2000);
         function balance_check(){
              $.ajax({
                   type: "POST",

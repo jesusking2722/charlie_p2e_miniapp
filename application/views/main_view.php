@@ -288,16 +288,6 @@
           }
         });
 
-
-
-
-
-
-
-
-
-
-
         // Обработчик изменений статуса подключения
         connector.onStatusChange(walletInfo => {
           console.log('Wallet status changed:', walletInfo);
@@ -325,6 +315,7 @@
                   type: "POST",
                   url: '/get_name_wallet.php',
                   success: function (result) {
+                    console.log("wallet result: ", result);
                     if(result=='telegram'){
                         $('.myModalDepositTg').fadeIn(100);                        
                     }
@@ -337,39 +328,39 @@
 
 
 
-$('.send-transaction').on('click', async function () {
-    var amountx=$(this).attr('amount');
-    var wallet=$(this).attr('wallet');
-    console.log("amountx: ", amountx, "wallet: ", wallet);
-    const transaction1 = {
-            validUntil: Math.floor(Date.now() / 1000) + 300,
-            messages: [
-              {
-                address: 'UQDrY6os74OCIuyGYX8HFw5VWxT2ovWURWiZ6V1_4QBH79hu', 
-                amount: (parseInt(amountx) * 1e9).toString()
-              }
-            ]
-          };
-
-          const tonSpaceLink = `https://t.me/wallet/start?startapp=tonconnect`;
-          if(wallet=='telegram'){
-            window.open(tonSpaceLink, '_blank');
-          }      
-          if(wallet=='tonkeeper'){
-            const tonKeeperLink = `https://app.tonkeeper.com/transfer/`;
-            Telegram.WebApp.openLink(tonKeeperLink);
-          }      
-                try {
-                    if (!connector.connected) {
-                      alert('Please connect your wallet first.');
-                      return;
-                    }
-                    const result = await connector.sendTransaction(transaction1); // Отправка транзакции
-                } catch (error) {
-                    console.log('Failed to send transaction. Please try again.');
+    $('.send-transaction').on('click', async function () {
+        var amountx=$(this).attr('amount');
+        var wallet=$(this).attr('wallet');
+        console.log("amountx: ", amountx, "wallet: ", wallet);
+        const transaction1 = {
+                validUntil: Math.floor(Date.now() / 1000) + 300,
+                messages: [
+                {
+                    address: 'UQDrY6os74OCIuyGYX8HFw5VWxT2ovWURWiZ6V1_4QBH79hu', 
+                    amount: (parseInt(amountx) * 1e9).toString()
                 }
+                ]
+            };
 
-});
+            const tonSpaceLink = `https://t.me/wallet/start?startapp=tonconnect`;
+            if(wallet=='telegram'){
+                window.open(tonSpaceLink, '_blank');
+            }      
+            if(wallet=='tonkeeper'){
+                const tonKeeperLink = `https://app.tonkeeper.com/transfer/`;
+                Telegram.WebApp.openLink(tonKeeperLink);
+            }      
+                    try {
+                        if (!connector.connected) {
+                        alert('Please connect your wallet first.');
+                        return;
+                        }
+                        const result = await connector.sendTransaction(transaction1); // Отправка транзакции
+                    } catch (error) {
+                        console.log('Failed to send transaction. Please try again.');
+                    }
+
+    });
        } catch (error) {
         console.error('Error during TonConnect initialization:', error);
         
