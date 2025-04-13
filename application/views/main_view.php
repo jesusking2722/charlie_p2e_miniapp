@@ -217,20 +217,14 @@
                 appName: "telegram-wallet",
             };       
             const universalLink = await connector.connect(walletConnectionSource);
-            // console.log("wallet connected");
-            // const walletsList = await connector.getWallets();
-            // console.log(walletsList[0])
-            // console.log('Generated connection link:', universalLink);
-            // $.ajax({
-            //       type: "POST",
-            //       url: '/set_name_wallet.php',
-            //       data: {'name':'telegram'},
-            //       success: function (result) {
-            //            savedConnection="";
-            //       }
-            //   });
-            // // Переход по universalLink для подключения кошелька
-            // //Telegram.WebApp.openLink(universalLink);
+            $.ajax({
+                  type: "POST",
+                  url: '/set_name_wallet.php',
+                  data: {'name':'telegram'},
+                  success: function (result) {
+                       savedConnection="";
+                  }
+              });
             window.open(universalLink, '_blank');
           } catch (error) {
             console.error('Connection failed:', error);
@@ -253,14 +247,14 @@
                 
             }
 
-            // $.ajax({
-            //       type: "POST",
-            //       url: '/set_name_wallet.php',
-            //       data: {'name':'tonkeeper'},
-            //       success: function (result) {
-            //            savedConnection="";
-            //       }
-            //   });
+            $.ajax({
+                  type: "POST",
+                  url: '/set_name_wallet.php',
+                  data: {'name':'tonkeeper'},
+                  success: function (result) {
+                       savedConnection="";
+                  }
+              });
             window.open(universalLink, '_blank');
             // Telegram.WebApp.openLink(universalLink);
           } catch (error) {
