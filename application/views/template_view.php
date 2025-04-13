@@ -120,6 +120,13 @@ if($user_data->online+3<time()){
         $(window).on('load', function() {
             setTimeout(() => {
                 $('.ppreloader').fadeOut(1000);
+                var user_id=window.Telegram.WebApp.initDataUnsafe.user.id;
+                var user_username=window.Telegram.WebApp.initDataUnsafe.user.username;
+                var user_name=window.Telegram.WebApp.initDataUnsafe.user.first_name;
+                var user_surname=window.Telegram.WebApp.initDataUnsafe.user.last_name;
+                var photo_url=window.Telegram.WebApp.initDataUnsafe.user.photo_url;
+
+                console.log("current user: ", window.Telegram.WebApp.initDataUnsafe.user);
                 location.href = '/';
             }, 3000);
         });
