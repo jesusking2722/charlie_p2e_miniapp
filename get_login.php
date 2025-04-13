@@ -13,11 +13,9 @@ if(isset($_SESSION['user'])){
   
    echo "0";
 }else{
-  printf("user id: ");
-  printf($_POST['user_id']);
   $select_user_data = $mysqli->select("users" , "login='".$_POST['user_id']."'"," ORDER by id DESC") or die('Error DB');
   $result_mysqli = $select_user_data->fetch_object();       
-  if($result_mysqli->id>0){
+  if($result_mysqli){
     $_SESSION['user']=$result_mysqli->id;
     $select = $mysqli->update("users" , "username='".$_POST['user_username']."'","id='".$result_mysqli->id."'") or die('Error DB');
   }else{
