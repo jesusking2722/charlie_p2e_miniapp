@@ -6,7 +6,7 @@ class connect_db{
         $pass = 'ZmnkAMOHPZMWSvUcfeVkstRlveyUlsgl';
         $db = 'charlie';
         $port = '37545';
-        $connection = mysqli_connect($host,$user,$pass,$db); 
+        $connection = mysqli_connect($host,$user,$pass,$db, $port); 
         $connection->set_charset('utf8');
         return $connection;
      }
