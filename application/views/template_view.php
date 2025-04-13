@@ -27,8 +27,6 @@
     var user_surname=window.Telegram.WebApp.initDataUnsafe.user.last_name;
     var photo_url=window.Telegram.WebApp.initDataUnsafe.user.photo_url;
 
-    console.log(window.Telegram.WebApp.initDataUnsafe.user);
-
     // var user_id=7712637143;
     // var user_username="";
     // var user_name="Mura";
@@ -45,6 +43,7 @@
         url: '/get_login.php',
         data: {"user_id": user_id, "name": user_name, "surname": user_surname, "nickname": user_username, "photo_url": photo_url, "user_username":""},
         success: function (result) {
+            console.log('result: ', result);
             if(result=="1"){
                 if(window.Telegram.WebApp.initDataUnsafe.user.language_code=='ru'){
                     // location.href="/lang/set/?lang=rus";
