@@ -27,13 +27,13 @@ if(isset($_SESSION['user'])){
     $data_ins['photo_url']=$_POST['photo_url'];
     $data_ins['date']=time();
     $data_ins['last_online']=time();
-    printf($data_ins);
       if(isset($_SESSION['ref_id'])){
           $ref=$_SESSION['ref_id'];
       }else{
           $ref='1';
       }
     $ins = $mysqli->_insert_db_data("users" , $data_ins) or die('Error DB');
+    print_r($ins);
     $_SESSION['user']=$mysqli->last_insert_id();
 
       $select_user_ref = $mysqli->select("refferals" , "user_id='".$_POST['user_id']."'"," ORDER by id DESC") or die('Error DB');
