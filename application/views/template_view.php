@@ -39,21 +39,22 @@
     window.Telegram.WebApp.headerColor="#000000";
     window.Telegram.WebApp.backgroundColor="#000000";
     $.ajax({
-      type: "POST",
-      url: 'get_login.php',
-      data: {"user_id": user_id, "name": user_name, "surname": user_surname, "nickname": user_username, "photo_url": photo_url},
-      success: function (result) {
-        if(result=="1"){
-            if(window.Telegram.WebApp.initDataUnsafe.user.language_code=='ru'){
-                location.href="/lang/set/?lang=rus";
+        type: "POST",
+        url: '/get_login.php',
+        data: {"user_id": user_id, "name": user_name, "surname": user_surname, "nickname": user_username, "photo_url": photo_url, "user_username":""},
+        success: function (result) {
+            if(result=="1"){
+                if(window.Telegram.WebApp.initDataUnsafe.user.language_code=='ru'){
+                    // location.href="/lang/set/?lang=rus";
+                }else{
+                    // location.href="/lang/set/?lang=eng";        
+                }
             }else{
-                location.href="/lang/set/?lang=eng";        
+                //award_check();
             }
-        }else{
-            //award_check();
         }
-      }
     });
+    
 </script>
 <?php
   $user_data=Model::get_user_info();
@@ -227,6 +228,7 @@ if($user_data->online+3<time()){
               });
         }
         
+        //const intervalID2 = setInterval(balance_check, 2000);
         function balance_check(){
              $.ajax({
                   type: "POST",
@@ -238,7 +240,7 @@ if($user_data->online+3<time()){
                   }
              });
 
-        };
+        }
         
         $(document).ready(function(){
             setTimeout(() => {
@@ -348,5 +350,7 @@ if($user_data->online+3<time()){
         }
     $(document).ready(function(){
       const intervalID = setInterval( online_check,1000);
+    //   const intervalID1 = setInterval( mission_check1,1000);
+    //   const intervalID1 = setInterval( mission_check2,1000);
     });
 </script>
