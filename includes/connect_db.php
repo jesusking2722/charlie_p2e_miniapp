@@ -1,13 +1,12 @@
 <?php
 class connect_db {
     public function connect() {
-        $host = 'localhost';
+        $host = 'shortline.proxy.rlwy.net';
         $user = 'root';
-        $pass = '';
-        $db = 'akrkwkmy_nm407797_charlie';
-        $port = "3306";
+        $pass = 'sSUwJKajVUtOwrHNWbvyWZdNeZojJVjT';
+        $db = 'charlie';
+        $port = "50436";
         $connection = new mysqli($host, $user, $pass, $db, $port);
-        
         if ($connection->connect_error) {
             die("Connection failed: " . $connection->connect_error);
         }
