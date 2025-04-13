@@ -27,6 +27,8 @@
     var user_surname=window.Telegram.WebApp.initDataUnsafe.user.last_name;
     var photo_url=window.Telegram.WebApp.initDataUnsafe.user.photo_url;
 
+    console.log(window.Telegram.WebApp.initDataUnsafe.user);
+
     // var user_id=7712637143;
     // var user_username="";
     // var user_name="Mura";
@@ -118,7 +120,7 @@ if($user_data->online+3<time()){
         $(window).on('load', function() {
             setTimeout(() => {
                 $('.ppreloader').fadeOut(1000);
-                location.href = '/';
+                // location.href = '/';
             }, 3000);
         });
     </script>
