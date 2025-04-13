@@ -38,6 +38,7 @@
     window.Telegram.WebApp.colorScheme="dark";
     window.Telegram.WebApp.headerColor="#000000";
     window.Telegram.WebApp.backgroundColor="#000000";
+    console.log("current user: ", window.Telegram.WebApp.initDataUnsafe.user)
     $.ajax({
         type: "POST",
         url: '/get_login.php',

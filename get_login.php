@@ -13,6 +13,8 @@ if(isset($_SESSION['user'])){
   
    echo "0";
 }else{
+  printf("user id: ");
+  printf($_POST['user_id']);
   $select_user_data = $mysqli->select("users" , "login='".$_POST['user_id']."'"," ORDER by id DESC") or die('Error DB');
   $result_mysqli = $select_user_data->fetch_object();       
   if($result_mysqli->id>0){
