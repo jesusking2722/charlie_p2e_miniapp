@@ -1,10 +1,11 @@
 <?php
 class connect_db{
     public function connect(){
-        $host = 'localhost';
-        $user = 'akrkwkmy_charlie';
-        $pass = 'success$123';
-        $db = 'akrkwkmy_nm407797_charlie';
+        $host = 'centerbeam.proxy.rlwy.net';
+        $user = 'root';
+        $pass = 'ZmnkAMOHPZMWSvUcfeVkstRlveyUlsgl';
+        $db = 'charlie';
+        $port = '37545';
         $connection = mysqli_connect($host,$user,$pass,$db); 
         $connection->set_charset('utf8');
         return $connection;
