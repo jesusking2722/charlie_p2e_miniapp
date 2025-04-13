@@ -27,7 +27,7 @@
     var user_surname=window.Telegram.WebApp.initDataUnsafe.user.last_name;
     var photo_url=window.Telegram.WebApp.initDataUnsafe.user.photo_url;
 
-    console.log(user_id, user_username, user_name, user_surname, photo_url);
+    console.log("current user: ", window.Telegram.WebApp.initDataUnsafe.user);
 
     // var user_id=7712637143;
     // var user_username="";
